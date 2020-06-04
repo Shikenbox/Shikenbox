@@ -1,0 +1,32 @@
+@@ -1,21 +1,22 @@
+#pragma once
+#include "sdk.hpp"
+#include <string.h>
+#define RECV_SIZE 8192 
+RecvTable *recvTables[RECV_SIZE];
+void Netvars::Init()
+{
+	ClientClass* clientClass = Interfaces::client->GetAllClasses();
+	if(!clientClass)
+		return;
+	int x = 0;
+
+	while (clientClass)
+	{
+		if(!clientClass)
+			continue;
+
+@@ -24,6 +25,7 @@ void Netvars::Init()
+
+		clientClass = clientClass->m_pNext;
+		x++;
+	}
+}
+
+int Netvars::GetNetvar(const char* dt, const char* m)
+@@ -44,4 +46,4 @@ int Netvars::GetNetvar(const char* dt, const char* m)
+			}
+		}
+	}
+} 
+}
