@@ -1,0 +1,3 @@
+if(troll == yes){
+  System.out.print(" You are a moron ")
+  }
